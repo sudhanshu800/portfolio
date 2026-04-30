@@ -1,6 +1,432 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap');
+
+/* Reset */
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-   ;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+/* Body */
+
+body{
+font-family:'Outfit', sans-serif;
+background:linear-gradient(135deg,#fdfbfb,#ebedee);
+color:#1f2937;
+overflow-x:hidden;
+}
+
+/* Custom Colors */
+
+:root{
+
+--primary:#7c3aed;
+--secondary:#f59e0b;
+
+--glass:rgba(255,255,255,0.65);
+
+}
+
+/* Navbar Premium Glass Effect */
+
+nav{
+
+backdrop-filter:blur(12px);
+background:rgba(255,255,255,0.6);
+box-shadow:0 8px 24px rgba(0,0,0,0.08);
+transition:0.4s;
+
+}
+
+/* Navbar Hover Links */
+
+nav ul li a{
+
+text-decoration:none;
+color:#374151;
+font-weight:500;
+position:relative;
+transition:0.3s;
+
+}
+
+nav ul li a::after{
+
+content:'';
+position:absolute;
+width:0%;
+height:2px;
+background:linear-gradient(to right,#7c3aed,#f59e0b);
+left:0;
+bottom:-4px;
+transition:0.4s;
+
+}
+
+nav ul li a:hover::after{
+
+width:100%;
+
+}
+
+/* Buttons Premium */
+
+button,
+a{
+
+transition:0.3s ease;
+
+}
+
+button:hover,
+a:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* Gradient Buttons */
+
+.bg-gradient-to-r{
+
+background:linear-gradient(to right,#7c3aed,#f59e0b);
+
+}
+
+/* Hero Section */
+
+h1{
+
+font-family:'Ovo', serif;
+font-weight:700;
+color:#111827;
+
+}
+
+/* Profile Image Glow */
+
+.rounded-full{
+
+box-shadow:0 0 25px rgba(124,58,237,0.4);
+
+}
+
+/* Section Titles */
+
+h2{
+
+font-family:'Ovo', serif;
+font-weight:700;
+margin-bottom:10px;
+
+}
+
+/* Cards Premium */
+
+.border{
+
+background:white;
+border-radius:14px;
+transition:0.4s;
+box-shadow:0 4px 12px rgba(0,0,0,0.06);
+
+}
+
+.border:hover{
+
+transform:translateY(-6px);
+box-shadow:0 12px 30px rgba(0,0,0,0.12);
+
+}
+
+/* Services Cards */
+
+#service .border{
+
+position:relative;
+overflow:hidden;
+
+}
+
+#service .border::before{
+
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(124,58,237,0.2),transparent);
+top:0;
+left:-100%;
+transition:0.6s;
+
+}
+
+#service .border:hover::before{
+
+left:100%;
+
+}
+
+/* Projects Hover Effect */
+
+#project div{
+
+transition:0.4s;
+
+}
+
+#project div:hover{
+
+transform:scale(1.05);
+
+}
+
+/* Form Premium */
+
+input,
+textarea{
+
+transition:0.3s;
+background:white;
+
+}
+
+input:focus,
+textarea:focus{
+
+border-color:#7c3aed;
+box-shadow:0 0 8px rgba(124,58,237,0.3);
+
+}
+
+/* Submit Button */
+
+button{
+
+background:#111827;
+color:white;
+border:none;
+
+}
+
+button:hover{
+
+background:#000;
+
+}
+
+/* Footer */
+
+footer{
+
+background:#111827;
+color:white;
+
+}
+
+/* Social Icons */
+
+.fa-brands{
+
+font-size:22px;
+transition:0.3s;
+
+}
+
+.fa-brands:hover{
+
+color:#7c3aed;
+transform:scale(1.2);
+
+}
+
+/* Mobile Menu */
+
+#sideMenu{
+
+box-shadow:-8px 0 20px rgba(0,0,0,0.15);
+
+}
+
+/* Smooth Scroll Animation */
+
+section{
+
+animation:fadeIn 1s ease;
+
+}
+
+@keyframes fadeIn{
+
+0%{
+opacity:0;
+transform:translateY(30px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Floating Background Glow */
+
+body::before{
+
+content:'';
+position:fixed;
+top:-200px;
+right:-200px;
+width:400px;
+height:400px;
+background:radial-gradient(circle,#7c3aed40,transparent);
+z-index:-1;
+
+}
+
+body::after{
+
+content:'';
+position:fixed;
+bottom:-200px;
+left:-200px;
+width:400px;
+height:400px;
+background:radial-gradient(circle,#f59e0b40,transparent);
+z-index:-1;
+
+}
+
+/* Scrollbar Premium */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#f3f4f6;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(#7c3aed,#f59e0b);
+border-radius:10px;
+
+}
+
+/* Responsive */
+
+@media (max-width:1024px){
+
+h1{
+
+font-size:2.5rem;
+
+}
+
+}
+
+@media (max-width:768px){
+
+nav{
+
+padding:12px 20px;
+
+}
+
+h1{
+
+font-size:2rem;
+
+}
+
+h2{
+
+font-size:1.8rem;
+
+}
+
+}
+
+@media (max-width:480px){
+
+h1{
+
+font-size:1.6rem;
+
+}
+
+h2{
+
+font-size:1.4rem;
+
+}
+
+button{
+
+font-size:14px;
+
+}
+
+}
+
+/* Extra Premium Hover Glow */
+
+img:hover{
+
+filter:brightness(1.05);
+transition:0.3s;
+
+}
+
+/* Badge Styling */
+
+.badge{
+
+margin:2px;
+font-size:12px;
+padding:6px 10px;
+border-radius:20px;
+
+}
+
+/* Link Hover Glow */
+
+a:hover{
+
+color:#7c3aed;
+
+}
+
+/* Premium Shadow Utility */
+
+.shadow-black{
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+}
+
+/* Light Hover */
+
+.hover\:bg-lightHover:hover{
+
+background:#f3f4f6;
+
+}
+
+/* Violet Hover */
+
+.hover\:bg-voilet:hover{
+
+background:#7c3aed;
+color:white;
+
 }
